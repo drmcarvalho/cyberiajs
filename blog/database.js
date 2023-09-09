@@ -11,30 +11,55 @@ function cadastrar_post(titulo, conteudo) {
     db.run("insert into posts(titulo, conteudo) values ($titulo, $conteudo)", {
         $titulo: titulo, 
         $conteudo: conteudo
-    });    
+    });
 }
 
 function listar_todos_post() {
     let posts = [];
-    db.each("select * from posts order by id", (err, row) => {
+    db.each("select titulo, conteudo from posts order by id", (_, row) => {
         posts.push({
             $titulo: row.titulo, 
             $conteudo: row.conteudo
-        })
+        });
     });
     return posts;
 }
 
-function selecionar_post_por_id(id) {
-    let post = {};
-    db.each("select titulo, conteudo from posts where id = $id limit 1", {$id: id}, (err, row) => {
-        post = {
-            $titulo: row.titulo, 
+const selecionar_post_por_id = (id) => {       
+    return db.get("select titulo, conteudo from posts where id = $id limit 1", {$id: id}, (_, row) => {        
+        return {
+            $titulo: row.titulo,
             $conteudo: row.conteudo
         };
-    });
-    return post;
-}
+    });    
+};
+
+//function selecionar_post_por_id(id) {                
+    /*const post = () => {
+        let res = {};
+        db.get("select titulo, conteudo from posts where id = $id limit 1", {$id: id}, (_, row) => {        
+                res = {
+                    $titulo: row.titulo, 
+                    $conteudo: row.conteudo
+                };
+        });
+        return res;
+    };
+    return post;  */
+
+    /*
+    let resultado = {};
+    var post = (param) => {
+        resultado = {
+            $titulo: param.titulo, 
+            $conteudo: param.conteudo
+        };
+    };
+
+    db.get("select titulo, conteudo from posts where id = $id limit 1", {$id: id}, (_, row) => post(row));
+    return resultado; */
+//}
+
 
 module.exports.criar = criar;
 module.exports.cadastrar_post = cadastrar_post;
