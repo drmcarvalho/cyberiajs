@@ -8,10 +8,10 @@ module.exports = function(request, response) {
             body += chunk;    
         })
         .on('end', () => {
-            const obj = qs.parse(body);
-            if ('titulo' in obj && 'conteudo' in obj)
-                database.cadastrar_post(obj.titulo, obj.conteudo);
-            else
-                console.log("enviar resposta");
+            const obj = qs.parse(body);            
+            if ('titulo' in obj && 'conteudo' in obj) {
+                database.cadastrar_post(obj.titulo, obj.conteudo);            
+            }
         });
+    response.write("cadastrado!");
 };
