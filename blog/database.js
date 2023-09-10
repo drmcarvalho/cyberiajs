@@ -16,5 +16,12 @@ function cadastrar_post(titulo, conteudo) {
     db.run("insert into posts(titulo, conteudo) values (?,?)", [titulo, conteudo]);
 }
 
+function criar_tabela() {
+    db.serialize(() => {
+        db.run("create table if not exists posts(id integer primary key AUTOINCREMENT, titulo text, conteudo text)");
+    });
+}
+
+module.exports.criar_tabela = criar_tabela;
 module.exports.query = query;
 module.exports.cadastrar_post = cadastrar_post;

@@ -3,7 +3,8 @@ const database = require('./blog/database.js');
 
 const app = new Teeny(`${__dirname}/routes.js`, 7000);
 
-database.query(function(dados){console.log(dados);}, "select * from posts", []);
+console.log("Criando tabela caso nao exista");
+database.criar_tabela();
 
 //database.cadastrar_post('teste 43', 'gato');
 
