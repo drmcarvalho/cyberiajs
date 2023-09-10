@@ -8,6 +8,4 @@ database.criar_tabela();
 
 //database.cadastrar_post('teste 43', 'gato');
 
-//database.sql(function(dados){console.log(dados);}, "select * from posts where id = ?", [2]);
-
 app.exec();
