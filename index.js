@@ -1,14 +1,12 @@
-const { Teeny } = require('Teeny.js');
+const { Teeny } = require('teeny.js');
 const database = require('./blog/database.js');
 
-const app = new Teeny(`${__dirname}\\routes.js`, 7000);
+const app = new Teeny(`${__dirname}/routes.js`, 7000);
 
+database.query(function(dados){console.log(dados);}, "select * from posts", []);
 
-console.log("Inicializado DB");
-database.criar();
+//database.cadastrar_post('teste 43', 'gato');
 
-res = database.selecionar_post_por_id(2);
-console.log(res);
-
+//database.sql(function(dados){console.log(dados);}, "select * from posts where id = ?", [2]);
 
 app.exec();

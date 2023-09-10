@@ -3,8 +3,8 @@ const database = require('./database');
 
 module.exports = function(request, response) {
     let body = '';    
-    request
-        .on('data', chunk => {
+    
+    request.on('data', chunk => {
             body += chunk;    
         })
         .on('end', () => {
@@ -13,5 +13,6 @@ module.exports = function(request, response) {
                 database.cadastrar_post(obj.titulo, obj.conteudo);            
             }
         });
+
     response.write("cadastrado!");
 };
