@@ -3,7 +3,7 @@ const database = require('./blog/database.js');
 
 const app = new Teeny(`${__dirname}/routes.js`, 7000);
 
-console.log("Iniciando database");
+console.log("Iniciando banco de dados");
 database.criar_tabela();
 
 app.exec();
