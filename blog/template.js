@@ -84,7 +84,7 @@ module.exports.base_html_post = `
                 @conteudo
             </div>
         </article>
-        <footer id="footer">Desenvolvido por ~Red~</footer>
+        <footer id="footer">Desenvolvido por ~Red~ | Feito com <a href="https://github.com/inphinit/teeny.js/" target="_blank">Teeny.js</a> ♥️</footer>
     </body>
 </html>
 `;
