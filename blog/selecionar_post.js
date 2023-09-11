@@ -15,12 +15,13 @@ module.exports = function(request, response, params) {
 
         if (result && result.length) {
             titulo = result[0].titulo;
-            conteudo = result[0].conteudo;            
-            response.write(aplica_paramtros_template(titulo, conteudo, '2023-09-11', params.id));
+            conteudo = result[0].conteudo;
+            data = result[0].publicado_em;
+            response.write(aplica_paramtros_template(titulo, conteudo, data, params.id));
         }                
         else {
             response.write(aplica_paramtros_template('Post não encontrado', '', '', params.id));
         }
         response.end();                        
-    },"select titulo, conteudo from posts where id = ?", [params.id]);
+    }, "select titulo, conteudo, publicado_em from posts where id = ?", [params.id]);
 }

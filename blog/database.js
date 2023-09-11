@@ -18,7 +18,7 @@ function cadastrar_post(titulo, conteudo) {
 
 function criar_tabela() {
     db.serialize(() => {
-        db.run("create table if not exists posts(id integer primary key AUTOINCREMENT, titulo text, conteudo text)");
+        db.run("create table if not exists posts(id integer primary key AUTOINCREMENT, titulo text, conteudo text, publicado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP)");
     });
 }
 
