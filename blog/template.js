@@ -79,6 +79,10 @@ module.exports.base_html_cyberia = `
             #logo {
                 font-size: 6vmin;                
             }
+            .separador {
+                text-align: center;
+                border-bottom: 1px solid #d2738a;
+            }
         </style>
     </head>
     <body>

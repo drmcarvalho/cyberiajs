@@ -6,9 +6,9 @@ module.exports = function(request, response, status) {
         let postagens_template_html = [];
         for (const post of dados) {
             postagens_template_html.push(`
-                <article> 
+                <article class="separador"> 
                     <a href="#${post.id}"> 
-                        <h2>${post.titulo}</h2> 
+                        <h2 style="text-align: left; font-size: 3.2vh;">${post.titulo}</h2> 
                         <p>${post.conteudo.slice(3, 20) + '...'}</p> 
                         <footer> 
                             <p style="font-size: 1.3vh;">Publicado em <time datetime="${post.publicado_em}">${post.publicado_em}</time></p>
@@ -21,5 +21,5 @@ module.exports = function(request, response, status) {
         const template_final_posts = template.base_lista_post_html.replace('@postagens', postagens_template_html.join(""));
         response.write(template.base_html_cyberia.replace('@template', template_final_posts).replace('@identificador', ''));
         response.end();
-    },"select * from posts", []);
+    }, "select * from posts", []);
 };
