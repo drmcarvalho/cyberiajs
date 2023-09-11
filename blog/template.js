@@ -5,7 +5,10 @@ module.exports.post_html = `
         @conteudo        
     </article>
 `;
-module.exports.lista_post_html = ` teste
+module.exports.base_lista_post_html = `
+<section class="posts"> 
+        @postagens
+</section> 
 `;
 module.exports.base_html_cyberia = `
 <!DOCTYPE html>
@@ -17,7 +20,7 @@ module.exports.base_html_cyberia = `
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
         <meta name="description" content="Cyberiablog um lugar onde descrevo meus pensamentos">
         
-        <title>Cyberiablog</title>
+        <title>Cyberia blog</title>
         <!--<link rel="icon" type="image/x-icon" href="favicon.ico" /> -->
         <style type="text/css">
             body {
