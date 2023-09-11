@@ -16,4 +16,5 @@ module.exports = (app) => {
     app.action('GET', '/listar_posts', './blog/listar_posts.js');
     app.action('POST', '/cadastrar_post', './blog/cadastrar_post.js');
     app.action('GET', '/post/<id:num>', './blog/selecionar_post.js');
+    app.action('POST', '/deletar_post/<id:num>', './blog/deletar_post.js');
 }

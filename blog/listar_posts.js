@@ -3,11 +3,13 @@ const template = require('./template.js');
 
 module.exports = function(request, response, status) {            
     database.query(function(dados) {
-        let postagens_template_html = [];
+        const url = new URL(request.url, `http://${request.headers.host}`);
+
+        let postagens_template_html = [];        
         for (const post of dados) {
             postagens_template_html.push(`
                 <article class="separador"> 
-                    <a href="#${post.id}"> 
+                    <a href="http://${url.host}/post/${post.id}" target="_blank"> 
                         <h2 style="text-align: left; font-size: 3.2vh;">${post.titulo}</h2> 
                         <p>${post.conteudo.slice(3, 20) + '...'}</p> 
                         <footer> 
