@@ -1,10 +1,8 @@
 module.exports.post_html = `
-    <article>       
-        <div>
-            <h1>@titulo</h1>
-            <p style="font-size: 1.3vh;">Publicado em <time datetime="@dataHora">@dataHora</time></p>
-            @conteudo
-        </div>
+    <article>               
+        <h1>@titulo</h1>
+        <p style="font-size: 1.3vh;">Publicado em <time datetime="@dataHora">@dataHora</time></p>
+        @conteudo        
     </article>
 `;
 module.exports.lista_post_html = ` teste
