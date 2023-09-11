@@ -1,4 +1,11 @@
-module.exports.base_html_post = `
+module.exports.post_html = `
+    <h1>@titulo</h1>
+    <p style="font-size: 1.3vh;">Publicado em <time datetime="@dataHora">@dataHora</time></p>
+    @conteudo
+`;
+module.exports.lista_post_html = ` teste
+`;
+module.exports.base_html_cyberia = `
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -75,13 +82,12 @@ module.exports.base_html_post = `
                 <span style="padding-left: 0.6%;">Cyberiablog</span>                
             </div>       
             <div>
-                <span style="padding-left: 0.8%;">navi@COMPUTER<span style="color: white;">:</span><span style="color: blue;">~</span><span style="color: white;">$</span> <span style="color: white;">./post</span></span>
+                <span style="padding-left: 0.8%;">navi@COMPUTER<span style="color: white;">:</span><span style="color: blue;">~</span><span style="color: white;">$</span> <span style="color: white;">./post @identificador</span></span>
             </div>     
         </header>                       
         <article>         
             <div>
-                <h1>@titulo</h1>
-                @conteudo
+                @template
             </div>
         </article>
         <footer id="footer">Desenvolvido por ~Red~ | Feito com <a href="https://github.com/inphinit/teeny.js/" target="_blank">Teeny.js</a> ♥️</footer>
