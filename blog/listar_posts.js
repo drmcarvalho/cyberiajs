@@ -2,7 +2,7 @@ const database = require('./database.js');
 const template = require('./template.js');
 
 module.exports = function(request, response, status) {            
-    database.query(function(dados) {        
+    database.query(function(dados) {
         let postagens_template_html = [];
         for (const post of dados) {
             postagens_template_html.push(`
@@ -15,10 +15,11 @@ module.exports = function(request, response, status) {
                         </footer> 
                     </a>
                 </article>
-            `);        
+            `);
         }
-        let template_lista_postagens = template.base_lista_post_html.replace('@postagens', postagens_template_html.join(""));
-        response.write(template.base_html_cyberia.replace('@template', template_lista_postagens).replace('@identificador', ''));
+        
+        let template_final_posts = template.base_lista_post_html.replace('@postagens', postagens_template_html.join(""));
+        response.write(template.base_html_cyberia.replace('@template', template_final_posts).replace('@identificador', ''));
         response.end();
-    },"select * from posts", []);        
+    },"select * from posts", []);
 };
