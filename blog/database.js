@@ -22,6 +22,11 @@ function criar_tabela() {
     });    
 }
 
+function deletar_post(id) {
+    db.run('delete from posts where id = ?', [id]);
+}
+
 module.exports.criar_tabela = criar_tabela;
 module.exports.query = query;
 module.exports.cadastrar_post = cadastrar_post;
+module.exports.deletar_post = deletar_post;
