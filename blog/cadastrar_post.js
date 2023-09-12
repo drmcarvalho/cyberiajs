@@ -11,14 +11,14 @@ module.exports = function(request, response, params) {
             const obj = qs.parse(body);       
             if ('titulo' in obj && 'conteudo' in obj) {
                 database.cadastrar_post(obj.titulo, obj.conteudo);   
-                response.end("Cadastrado");
+                response.end("Cadastrado\n");
             }
             else {
-                response.end("Verrifique os parametros 'titulo' e 'conteudo'")
+                response.end("Verrifique os parametros 'titulo' e 'conteudo'\n")
             }            
         });    
     }
     else {
-        response.end('acesso nao permitido')
+        response.end('Acesso negado\n')
     }       
 };
