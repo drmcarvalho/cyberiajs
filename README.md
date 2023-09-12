@@ -1,6 +1,6 @@
 # Cyberiajs
 
-Blog feito com [Teeny.js](https://github.com/inphinit/teeny.js/) e banco de dados sqlite com visual inspirado no anime Serial Experiments Lain. Esta aplicação de blog permite cadastrar e gegenciar postagens, e criar posts usando HTML, JS e CSS do seu jeito xD! Cyberiablog usa apenas Vanilla JS e o Teeny.js como sistema de rotas, sendo o mais [suckless](https://suckless.org/philosophy/) possivel.
+Blog feito com [Teeny.js](https://github.com/inphinit/teeny.js/) e banco de dados sqlite com visual inspirado no anime Serial Experiments Lain. Esta aplicação de blog permite cadastrar e gegenciar postagens, e criar posts usando HTML, JS e CSS do seu jeito xD! Cyberiablog usa apenas Vanilla JS e o Teeny.js como sistema de rotas, é um site estático sendo o mais [suckless](https://suckless.org/philosophy/) possivel.
 
 # Instruções para executar o projeto
 
