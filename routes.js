@@ -12,7 +12,7 @@ module.exports = (app) => {
         return `Error page: ${status}`;
     });
 
-    app.setPattern('index', 'listar_posts|index|home|inicio');
+    app.setPattern('index', 'listar_posts|index|home|inicio|cyberia|cyberiablog|blog');
 
     app.action('GET', '/', './blog/listar_posts.js');
     app.action('GET', '/<myindex:index>', './blog/listar_posts.js');
