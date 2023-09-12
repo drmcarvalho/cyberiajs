@@ -89,7 +89,11 @@ module.exports.base_html_cyberia = `
         <header>
             <div id="logo">
                 <span style="padding-left: 0.6%;">Cyberiablog</span>                
-            </div>       
+            </div>
+            <div>
+                <span style="padding-left: 0.8%; font-style: italic;">Um lugar onde descrevo meus pensamentos, falo sobre tecnologia, computação e nosso mundo cada vez mais distópico.</span>
+            </div>
+            <br>
             <div>
                 <span style="padding-left: 0.8%;">navi@COMPUTER<span style="color: white;">:</span><span style="color: blue;">~</span><span style="color: white;">$</span> <span style="color: white;">./post @identificador</span></span>
             </div>     

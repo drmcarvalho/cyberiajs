@@ -11,7 +11,7 @@ module.exports = function(request, response, status) {
                 <article class="separador"> 
                     <a href="http://${url.host}/post/${post.id}" target="_blank"> 
                         <h2 style="text-align: left; font-size: 3.2vh;">${post.titulo}</h2> 
-                        <p>${post.conteudo.slice(3, 20) + '...'}</p> 
+                        <p>${post.conteudo.slice(3, 70) + '...'}</p> 
                         <footer> 
                             <p style="font-size: 1.3vh;">Publicado em <time datetime="${post.publicado_em}">${post.publicado_em}</time></p>
                         </footer> 
