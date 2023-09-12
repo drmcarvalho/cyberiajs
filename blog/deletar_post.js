@@ -13,6 +13,6 @@ module.exports = function(request, response, params) {
         }, 'select id from posts where id = ?', [params.id]);
     }
     else {
-        response.end('Acesso nao negado');
+        response.end('Acesso negado');
     }    
 }
