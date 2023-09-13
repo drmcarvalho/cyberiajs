@@ -1,7 +1,7 @@
 const database = require('./database.js');
 
 module.exports = function(request, response, params) {
-    if (!(process.env.CHAVE_ACESSO !== undefined && process.env.CHAVE_ACESSO && process.env.CHAVE_ACESSO === params.chaveacesso)) {
+    if (!autorizacao.possui_autorizacao(params.chaveacesso)) {
         response.end('Acesso negado\n')
         return;
     }
