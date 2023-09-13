@@ -3,7 +3,7 @@ const template = require('./template.js');
 
 module.exports = function(request, response, params) {    
     database.query(function(result) {        
-        const aplica_paramtros_template = (titulo, conteudo, data, id) => {
+        function aplica_paramtros_template (titulo, conteudo, data, id) {
             return template.base_html_cyberia
                 .replace('@template', template.post_html
                     .replace('@titulo', titulo)
