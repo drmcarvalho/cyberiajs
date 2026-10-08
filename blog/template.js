@@ -31,11 +31,11 @@ module.exports.base_html_cyberia = `
                 
                 display: grid;
                 grid-template-rows: auto 1fr auto;
-            }
+            }            
 
             header{ 
                 min-height:50px;                
-            }
+            }            
 
             footer{ 
                 min-height:50px;                 
@@ -48,8 +48,7 @@ module.exports.base_html_cyberia = `
                 background: black;
                 background: #111111;
                 /*color: limegreen; */
-                color: #d2738a;                
-                
+                color: #d2738a;
             }
 
             h1 {
@@ -65,11 +64,12 @@ module.exports.base_html_cyberia = `
             }
 
             p {
-                text-align: justify;
+                text-align: left;
                 font-size: 2vmin;
                 line-height: 1.7em;
                 padding-left: 1%;
                 padding-right: 1%;
+                max-width: 75ch;
             }            
 
             li {
@@ -82,7 +82,7 @@ module.exports.base_html_cyberia = `
             .separador {
                 text-align: center;
                 border-bottom: 1px solid #d2738a;
-            }
+            }            
         </style>
     </head>
     <body>
@@ -97,8 +97,8 @@ module.exports.base_html_cyberia = `
             <div>
                 <span style="padding-left: 0.8%;">navi@COMPUTER<span style="color: white;">:</span><span style="color: blue;">~</span><span style="color: white;">$</span> <span style="color: white;">./post @identificador</span></span>
             </div>     
-        </header>                       
-            @template
+        </header>                               
+        @template        
         <aside>
             <!-- tags --> 
         </aside>
