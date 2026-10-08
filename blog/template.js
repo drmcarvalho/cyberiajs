@@ -20,7 +20,7 @@ module.exports.base_html_cyberia = `
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
         <meta name="description" content="Cyberiablog um lugar onde descrevo meus pensamentos">
         
-        <title>Cyberia blog</title>
+        <title>Cyberia blog @titulo</title>
         <!--<link rel="icon" type="image/x-icon" href="favicon.ico" /> -->
         <style type="text/css">
             body {

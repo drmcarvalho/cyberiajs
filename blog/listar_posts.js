@@ -21,7 +21,7 @@ module.exports = function(request, response, status) {
         }
         
         const template_final_posts = template.base_lista_post_html.replace('@postagens', postagens_template_html.join(""));
-        response.write(template.base_html_cyberia.replace('@template', template_final_posts).replace('@identificador', ''));
+        response.write(template.base_html_cyberia.replace('@titulo', '').replace('@template', template_final_posts).replace('@identificador', ''));
         response.end();
     }, "select * from posts", []);
 };
