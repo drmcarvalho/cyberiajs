@@ -3,21 +3,27 @@ const template = require('./template.js');
 
 module.exports = function(request, response, params) {    
     database.query(function(result) {        
-        function aplica_paramtros_template (titulo, conteudo, data, id) {
+        function aplica_paramtros_template(titulo, conteudo, data, id) {
+            let stringDataFormatada = '';
+            if (conteudo && data) {
+                const [dataPublicacao, hora] = data.split(" ");
+                const [ano, mes, dia] = dataPublicacao.split("-");
+                stringDataFormatada = `${dia}/${mes}/${ano} ${hora}`;
+            }
             return template.base_html_cyberia
-                .replace('@titulo', ` - ${titulo}`)
+                .replace('@titulo', titulo)
                 .replace('@template', template.post_html
                     .replace('@titulo', titulo)
                     .replace('@conteudo', conteudo)
-                    .replace('@dataHora', data)
-                    .replace('@dataHora', data))
+                    .replace('@dataHora', data || '')
+                    .replace('@dataHora', stringDataFormatada))
                 .replace('@identificador',  `id=${id}`);
         };
 
         if (result && result.length) {
-            titulo = result[0].titulo;
-            conteudo = result[0].conteudo;
-            data = result[0].publicado_em;
+            const titulo = result[0].titulo;
+            const conteudo = result[0].conteudo;
+            const data = result[0].publicado_em;
             response.write(aplica_paramtros_template(titulo, conteudo, data, params.id));
         }                
         else {

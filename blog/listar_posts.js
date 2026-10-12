@@ -7,13 +7,17 @@ module.exports = function(request, response, status) {
 
         let postagens_template_html = [];        
         for (const post of dados) {
+            const s = post.publicado_em;
+            const [data, hora] = s.split(" ");
+            const [ano, mes, dia] = data.split("-");
+            const stringDataFormatada = `${dia}/${mes}/${ano} ${hora}`;
             postagens_template_html.push(`
                 <article class="separador"> 
                     <a href="http://${url.host}/post/${post.id}" target="_blank"> 
                         <h2 style="text-align: left; font-size: 3.2vh;">${post.titulo}</h2> 
                         <p>${post.conteudo.slice(3, 70) + '...'}</p> 
-                        <footer> 
-                            <p style="font-size: 1.3vh;">Publicado em <time datetime="${post.publicado_em}">${post.publicado_em}</time></p>
+                        <footer>
+                            <p style="font-size: 1.3vh;">Publicado em <time datetime="${post.publicado_em}">${stringDataFormatada}</time></p>
                         </footer> 
                     </a>
                 </article>
@@ -23,5 +27,5 @@ module.exports = function(request, response, status) {
         const template_final_posts = template.base_lista_post_html.replace('@postagens', postagens_template_html.join(""));
         response.write(template.base_html_cyberia.replace('@titulo', '').replace('@template', template_final_posts).replace('@identificador', ''));
         response.end();
-    }, "select * from posts", []);
+    }, "select * from posts order by publicado_em desc", []);
 };
