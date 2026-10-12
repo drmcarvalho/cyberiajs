@@ -1,4 +1,5 @@
 const database = require('./database.js');
+const autorizacao = require('./autorizacao');
 
 module.exports = function(request, response, params) {
     if (!autorizacao.possui_autorizacao(params.chaveacesso)) {
