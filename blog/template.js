@@ -35,6 +35,18 @@ module.exports.base_html_cyberia = `
                 padding: 0 16px;
             }            
 
+            pre {
+                font-size: clamp(1rem, 0.9rem + 0.4vw, 1.15rem);
+                padding: 0 1%;
+                max-width: 75ch;
+                tab-size: 4;
+                overflow-x: auto;
+            }
+
+            main {
+                min-width: 0;
+            }
+
             header{ 
                 min-height:50px;                
             }            
